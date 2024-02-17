@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7bf7ecb4-7a0d-489f-9b88-fe8c0b9939fa" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ammaFlow" doc:id="e87f2117-846c-4846-823f-3616e7468815" >
+		<http:listener doc:name="Listener" doc:id="e1602e72-7f4b-4f00-b8ff-388af2a7e363" config-ref="HTTP_Listener_config" path="/api"/>
+		<logger level="DEBUG" doc:name="Logger" doc:id="7ecdcb83-71a1-4a1f-84cc-6204029e4324" message="#[love u maa]" category="com.amma.int"/>
+	</flow>
+</mule>
